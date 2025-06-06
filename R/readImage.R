@@ -6,8 +6,7 @@
 #'
 #' @param path The file path of the image to be read.
 #' @param resizeRows The desired number of rows (height) to resize the image. 
-#'                   The aspect ratio of the image will be maintained during resizing. 
-#'                   Default is 640 rows.
+#'                   The aspect ratio of the image will be maintained during resizing.
 #'
 #' @return A cimg object containing the resized image.
 #' 
@@ -28,7 +27,7 @@
 #' @importFrom tiff readTIFF
 #' @export
 
-readImage <- function(path, resizeRows = 640) {
+readImage <- function(path, resizeRows) {
   extension <- tolower(tools::file_ext(path))  # Get the file extension and convert it to lowercase
   image <- switch(extension,
                    "jpg" = as.cimg(readJPEG(path)),    # Read JPG files

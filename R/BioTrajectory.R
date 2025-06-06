@@ -49,7 +49,7 @@ removeBackground<- function(im, Barnes) {
   return(im)
 }
 
-readImage <- function(path, resizeRows = 640) {
+readImage <- function(path, resizeRows) {
   extension <- tolower(tools::file_ext(path))  # Get the file extension and convert it to lowercase
   image <- switch(extension,
                    "jpg" = as.cimg(readJPEG(path)),    # Read JPG files

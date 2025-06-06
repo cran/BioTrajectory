@@ -4,14 +4,13 @@
 \alias{readImage}
 \title{Read and Resize an Image}
 \usage{
-readImage(path, resizeRows = 640)
+readImage(path, resizeRows)
 }
 \arguments{
 \item{path}{The file path of the image to be read.}
 
 \item{resizeRows}{The desired number of rows (height) to resize the image. 
-The aspect ratio of the image will be maintained during resizing. 
-Default is 640 rows.}
+The aspect ratio of the image will be maintained during resizing.}
 }
 \value{
 A cimg object containing the resized image.

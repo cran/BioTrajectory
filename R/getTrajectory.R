@@ -37,13 +37,13 @@
 #'
 
 getTrajectory <- function(listImages, Barnes, iBackground, iBegin, iEnd) {
-  background <- readImage(listImages[iBackground])
+  background <- readImage(listImages[iBackground], 640)
   background <- resize(background, 640)
   background <- removeBackground(background, Barnes)
   coords <- c(NA, NA)
 
   for (i in (iBegin:iEnd)) {
-    frame <- readImage(listImages[i])
+    frame <- readImage(listImages[i], 640)
     frame <- removeBackground(frame, Barnes)
     
     difference <- background - frame
@@ -67,5 +67,6 @@ getTrajectory <- function(listImages, Barnes, iBackground, iBegin, iEnd) {
 
   coords <- coords[-1, ]
   coords <- data.frame(coords)
+  coords<- na.omit(coords)
   return(coords)
 }

@@ -39,7 +39,7 @@ getRadius <- function(frame) {
     return(res)
   }
 
-  plot(frame)
+  plot(frame, main = "Click on the image four times to define the area of interest.")
   points <- locator(n = 4) 
 
   X0 <- c(mean(points$x), mean(points$y), 0.5 * sqrt(diff(points$x[1:2])^2 + diff(points$y[1:2])^2))

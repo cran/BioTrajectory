@@ -1,0 +1,7 @@
+Minor updates in version 1.0.1
+======================
+
+- Updated the default parameter of the `videoToFrames` function
+- Modified the return format of the `getTrajectory` function
+- Updated the default parameter of the `readImage` function
+- Added an instruction message to the `getRadius` function

@@ -21,6 +21,7 @@
 #' selFrame(image_files)
 #' }
 #' 
+#' @export
 
 selFrame <- function(image_files) {
   # Function to display an image

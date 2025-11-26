@@ -7,7 +7,7 @@
 distanceToTarget(data, target, targetRadious = 0)
 }
 \arguments{
-\item{data}{A matrix or data frame where each row represents a point in multi-dimensional space.}
+\item{data}{An object of class `trajectory` containing a collection of points with coordinates.}
 
 \item{target}{A numeric vector representing the coordinates of the target point.}
 
@@ -24,11 +24,4 @@ of points within the target radius, and `length`, indicating the lengths of thes
 \description{
 Given a dataset of points, it computes the Euclidean distances from each point to a specified target point. 
 The function also identifies contiguous segments of points that fall within a specified radius around the target.
-}
-\examples{
-# Create an example data matrix
-data <- matrix(c(1, 1, 2, 2, 3, 3), ncol = 2, byrow = TRUE)
-target <- c(2, 2)
-result <- distanceToTarget(data, target, targetRadious = 0)
-print(result)
 }

@@ -1,7 +1,7 @@
 Package: BioTrajectory
 Type: Package
 Title: Image Processing Tools for Barnes Maze Experiments
-Version: 1.0.1
+Version: 1.1.0
 Authors@R: c(person("Antonio", "Guerrero", email="jaguerrero@correo.uaa.mx", role=c("cre")),
     		 person("Vanessa", "Ramirez", email="rmz.prz.vanessa@gmail.com", role=c("aut")), 
     		 person("Jorge", "Macias", email="jemacias@correo.uaa.mx", role=c("ctb"))) 
@@ -15,7 +15,7 @@ Author: Antonio Guerrero [cre],
   Jorge Macias [ctb]
 Maintainer: Antonio Guerrero <jaguerrero@correo.uaa.mx>
 NeedsCompilation: no
-RoxygenNote: 7.3.2.9000
-Packaged: 2025-06-06 15:35:34 UTC; rmzpr
+RoxygenNote: 7.3.3
+Packaged: 2025-11-25 17:14:33 UTC; rmzpr
 Repository: CRAN
-Date/Publication: 2025-06-06 16:50:02 UTC
+Date/Publication: 2025-11-26 16:50:01 UTC

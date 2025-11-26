@@ -4,14 +4,12 @@
 \alias{nearestTarget}
 \title{Finds the nearest targets to a set of points within a specified radius.}
 \usage{
-nearestTarget(points, targets, r)
+nearestTarget(data, targets, r)
 }
 \arguments{
-\item{points}{A matrix or data frame containing the coordinates of the points with 
-rows representing points.}
+\item{data}{An object of class `trajectory` containing a collection of points with coordinates.}
 
-\item{targets}{A matrix or data frame containing the coordinates of the target locations 
-with rows representing targets.}
+\item{targets}{A matrix or data frame containing the coordinates of the target locations with rows representing targets.}
 
 \item{r}{A numeric value specifying the radius within which to consider targets.}
 }
@@ -27,16 +25,4 @@ Calculates the distances between a set of points and target locations.
 It identifies the nearest target for each point and checks if the distance is within 
 a specified radius. If a target is found within the radius, its index and distance 
 are returned; otherwise, -1 is returned for both.
-}
-\examples{
-# Define a set of points and targets
-points <- matrix(c(1, 2, 3, 4), ncol = 2)
-targets <- matrix(c(2, 3, 5, 6), ncol = 2)
-radius <- 2
-
-# Find the nearest targets
-nearest_results <- nearestTarget(points, targets, radius)
-
-# Print the results
-print(nearest_results)
 }

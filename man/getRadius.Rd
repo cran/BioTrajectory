@@ -29,7 +29,7 @@ The objective function (`ftemp`) calculates the sum of squared differences betwe
 and the expected distance from the circle's center.
 }
 \examples{
-if(interactive()){ 
+if(interactive()){
 path <- system.file('extdata/data.tiff', package='BioTrajectory')
 im <- tiff::readTIFF(path)
 im <- imager::as.cimg(t(im[,,1]))

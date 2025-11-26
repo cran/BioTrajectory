@@ -7,24 +7,17 @@
 interpolateTrajectory(data, n = 4)
 }
 \arguments{
-\item{data}{A data frame with at least two columns: `x` and `y`, representing
-the coordinates of the points.}
+\item{data}{An object of class `trajectory` containing a collection of points with coordinates.}
 
 \item{n}{An integer indicating the number of intermediate points to generate
 between each pair of points. Default is 4.}
 }
 \value{
-A data frame containing the `x` and `y` coordinates, which includes
-both the original points and the interpolated points.
+An object of class `trayectoria`, which contains the `x` and `y` coordinates, including
+        both the original points and any interpolated points. The `trayectoria` object allows users to 
+        store, manipulate, and analyze the coordinates of the object across frames. If no object is detected 
+        in a frame, the corresponding coordinates will be set to `NA`.
 }
 \description{
-Given a dataset of points, it interpolates to generate
-intermediate points between them.
-}
-\examples{
-# Create an example data frame
-data <- data.frame(x = c(1, 2, 3), y = c(1, 4, 9))
-# Interpolate the trajectory
-interpolated <- interpolateTrajectory(data, n = 4)
-print(interpolated)
+Given a dataset of points, it interpolates to generate intermediate points between them.
 }

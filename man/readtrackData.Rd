@@ -12,8 +12,9 @@ readtrackData(file, na.rm = FALSE)
 \item{na.rm}{A logical value indicating whether to remove rows with NA values (default is FALSE).}
 }
 \value{
-A data frame with two columns (`x` and `y`) containing the coordinates read from 
-  the file. If `na.rm` is TRUE, rows with NA values are omitted.
+An object of class `trayectoria` containing the points (coordinates) of the object in each frame.
+        The `trayectoria` object will include the `x` and `y` coordinates. If no object is detected in a frame,
+        the corresponding coordinates will be set to `NA` in the `trayectoria` object.
 }
 \description{
 Reads a text file containing tracking data, where each line represents 

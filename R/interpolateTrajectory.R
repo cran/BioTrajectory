@@ -1,27 +1,25 @@
 #' Interpolates a trajectory
 #'
-#' Given a dataset of points, it interpolates to generate
-#' intermediate points between them.
+#' Given a dataset of points, it interpolates to generate intermediate points between them.
 #'
-#' @param data A data frame with at least two columns: `x` and `y`, representing
-#' the coordinates of the points.
+#' @param data An object of class `trajectory` containing a collection of points with coordinates.
 #' @param n An integer indicating the number of intermediate points to generate
 #' between each pair of points. Default is 4.
-#' @return A data frame containing the `x` and `y` coordinates, which includes
-#' both the original points and the interpolated points.
-#' @examples
-#' # Create an example data frame
-#' data <- data.frame(x = c(1, 2, 3), y = c(1, 4, 9))
-#' # Interpolate the trajectory
-#' interpolated <- interpolateTrajectory(data, n = 4)
-#' print(interpolated)
+#' @return An object of class `trayectoria`, which contains the `x` and `y` coordinates, including
+#'         both the original points and any interpolated points. The `trayectoria` object allows users to 
+#'         store, manipulate, and analyze the coordinates of the object across frames. If no object is detected 
+#'         in a frame, the corresponding coordinates will be set to `NA`.
+#' 
 #' @export
 
 interpolateTrajectory <- function(data, n = 4) {
-  N <- nrow(data)
-  res <- c(data$x[1], data$y[1])
+  if(!is.trajectory(data)){
+    stop("'data' is not a valid trajectory object.")
+  }
+  N <- nrow(data$points)
+  res <- c(data$points$x[1], data$points$y[1])
   for (i in 1:(N - 1)) {
-    data1 <- data[i + 0:1, ]
+    data1 <- data$points[i + 0:1, ]
     if (data1$x[1] != data1$x[2]) {
       xyI <- approx(data1, n = 2 + n)
       if (data1$x[1] > data1$x[2]) {
@@ -38,6 +36,7 @@ interpolateTrajectory <- function(data, n = 4) {
     colnames(temp) <- c("x", "y")
     res <- rbind(res, temp)
   }
-  res <- rbind(tail(res, -1), tail(data, 1))
-  return(res)
+  res <- rbind(tail(res, -1), tail(data$points, 1))
+  traj <-trajectory(x=res[,1],y=res[,2])
+  return(traj)
 }

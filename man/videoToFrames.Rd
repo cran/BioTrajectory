@@ -4,7 +4,7 @@
 \alias{videoToFrames}
 \title{Extract Frames from a Video and Save as Images}
 \usage{
-videoToFrames(videoPath, outputDir, fps=15)
+videoToFrames(videoPath, outputDir, fps = 15)
 }
 \arguments{
 \item{videoPath}{Path to the video file.}

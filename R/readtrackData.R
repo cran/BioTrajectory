@@ -7,8 +7,9 @@
 #' @param file A character string specifying the path to the file containing the tracking data.
 #' @param na.rm A logical value indicating whether to remove rows with NA values (default is FALSE).
 #'
-#' @return A data frame with two columns (`x` and `y`) containing the coordinates read from 
-#'   the file. If `na.rm` is TRUE, rows with NA values are omitted.
+#' @return An object of class `trayectoria` containing the points (coordinates) of the object in each frame.
+#'         The `trayectoria` object will include the `x` and `y` coordinates. If no object is detected in a frame,
+#'         the corresponding coordinates will be set to `NA` in the `trayectoria` object.
 #'
 #' @examples
 #' # Read tracking data from a file
@@ -36,5 +37,6 @@ readtrackData <- function(file, na.rm = FALSE) {
     data <- na.omit(data)
     rownames(data) <- 1:nrow(data)
   }
-  return(data)
+  traj <- trajectory(x=data[,1],y=data[,2])
+  return(traj)
 }

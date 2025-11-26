@@ -29,6 +29,7 @@
 #' print(circle_params)
 #' }
 #'
+#' @export
 
 getRadius <- function(frame) {
   ftemp <- function(X) {
